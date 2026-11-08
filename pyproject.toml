@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stock-red-flags"
+version = "0.1.0"
+description = "Transparent fundamental red-flag checks, Piotroski F-score, Altman Z-score and screener filters for listed companies (Indian-market friendly, pure Python)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Vasim Mistry"}]
+keywords = ["fundamental-analysis", "red-flags", "piotroski", "altman-z", "screener", "nse", "india", "stocks"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Education",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/vasimmistry-dev/stock-red-flags"
+Issues = "https://github.com/vasimmistry-dev/stock-red-flags/issues"
+
+[project.scripts]
+red-flags = "stock_red_flags.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
